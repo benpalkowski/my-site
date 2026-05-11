@@ -27,9 +27,9 @@ export default function RootLayout({
               Home
             </Link>
 
-            <Link href="/blog">
-              Blog
-            </Link>
+         <Link href="/blog">
+  Posts
+</Link>
 
           </div>
         </nav>

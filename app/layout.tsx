@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Geist } from "next/font/google";
 import "./globals.css";
+
+const geist = Geist({
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "My Website",
@@ -14,10 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={geist.className}>
 
-        <nav className="border-b p-4">
-          <div className="flex gap-6 text-lg font-medium">
+        <nav className="border-b px-6 py-4">
+          <div className="max-w-4xl mx-auto flex gap-6 text-lg font-medium">
             <Link href="/">
               Home
             </Link>
@@ -26,15 +31,12 @@ export default function RootLayout({
               Blog
             </Link>
 
-            <Link href="/about">
-              About
-            </Link>
           </div>
         </nav>
 
-      <main className="max-w-4xl mx-auto">
-  {children}
-</main>
+        <main className="max-w-4xl mx-auto px-6 py-10">
+          {children}
+        </main>
 
       </body>
     </html>

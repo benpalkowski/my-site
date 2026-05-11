@@ -1,5 +1,7 @@
 ---
 title: "First Post"
+date: "2026-05-10"
+excerpt: "My first real post built with Next.js and Markdown."
 ---
 
 # First Post

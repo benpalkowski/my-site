@@ -23,11 +23,12 @@ export default function RootLayout({
 
         <nav className="border-b px-6 py-4">
           <div className="max-w-4xl mx-auto flex gap-6 text-lg font-medium">
+
             <Link href="/">
               Home
             </Link>
 
-         <Link href="/posts">
+            <Link href="/posts">
   Posts
 </Link>
 

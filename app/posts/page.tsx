@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Link from "next/link";
 
 export default function PostsPage() {
   const postsDirectory = path.join(
@@ -28,18 +29,40 @@ export default function PostsPage() {
     return {
       slug,
       title: data.title || slug,
+      date: data.date || "",
+      excerpt: data.excerpt || "",
     };
   });
 
   return (
-    <main className="space-y-4">
-      <h1 className="text-4xl font-bold mb-6">
+    <main className="space-y-6">
+
+      <h1 className="text-5xl font-bold mb-8">
         Posts
       </h1>
 
       {posts.map((post) => (
-       
+        <Link
+          key={post.slug}
+          href={`/posts/${post.slug}`}
+          className="block border rounded-2xl p-6 hover:bg-gray-50 transition"
+        >
+
+          <p className="text-sm text-gray-500 mb-2">
+            {post.date}
+          </p>
+
+          <h2 className="text-3xl font-semibold mb-2">
+            {post.title}
+          </h2>
+
+          <p className="text-gray-600">
+            {post.excerpt}
+          </p>
+
+        </Link>
       ))}
+
     </main>
   );
 }

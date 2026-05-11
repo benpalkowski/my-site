@@ -1,24 +1,38 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen p-10">
+    <main className="space-y-12">
 
-      <h1 className="text-5xl font-bold mb-6">
-        My Website
-      </h1>
+      <section className="space-y-6">
 
-      <Image
-        src="/images/photo.jpg"
-        alt="Website photo"
-        width={800}
-        height={500}
-        className="rounded-lg mb-6"
-      />
+        <h1 className="text-6xl font-bold tracking-tight">
+          My Website
+        </h1>
 
-      <p className="text-lg">
-        Welcome to my new website.
-      </p>
+        <p className="text-xl text-gray-600 max-w-2xl">
+          Thoughts, writing, projects, and updates.
+        </p>
+
+        <Link
+          href="/blog"
+          className="inline-block rounded-lg bg-black text-white px-6 py-3 text-lg"
+        >
+          Read Posts
+        </Link>
+
+      </section>
+
+      <section>
+        <Image
+          src="/images/photo.jpg"
+          alt="Homepage image"
+          width={1200}
+          height={700}
+          className="rounded-2xl w-full"
+        />
+      </section>
 
     </main>
   );

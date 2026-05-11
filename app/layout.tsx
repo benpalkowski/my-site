@@ -27,7 +27,7 @@ export default function RootLayout({
               Home
             </Link>
 
-         <Link href="/blog">
+         <Link href="/posts">
   Posts
 </Link>
 

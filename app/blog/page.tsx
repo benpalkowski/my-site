@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -15,12 +14,7 @@ export default function HomePage() {
           Thoughts, writing, projects, and updates.
         </p>
 
-        <Link
-          href="/blog"
-          className="inline-block rounded-lg bg-black text-white px-6 py-3 text-lg"
-        >
-          Read the Blog
-        </Link>
+        
 
       </section>
 

@@ -13,13 +13,13 @@ export default function HomePage() {
           </p>
 
           <h1 className="text-5xl font-bold tracking-tight max-w-4xl leading-tight">
-            Estate planning, philanthropy and campaign finance.
+            Estate planning, charitable giving and campaign finance.
           </h1>
 
         </div>
 
         <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
-          Insights, analysis and commenary.
+          Miscellaneous updates, analysis and commentary from an attorney, CPA, nonprofit consultant and lifelong New Englander.
         </p>
 
       </section>
@@ -63,45 +63,6 @@ Please feel welcome to contact me to start a conversation.
   </div>
 
 </section>
-
-      <section className="space-y-6 pb-20">
-
-        <h2 className="text-3xl font-bold">
-          Recent Posts
-        </h2>
-
-        <div className="space-y-4">
-
-          <a
-            href="/posts/first-post"
-            className="block border rounded-2xl p-6 hover:bg-gray-50 transition"
-          >
-            <h3 className="text-2xl font-semibold mb-2">
-              First Post
-            </h3>
-
-            <p className="text-gray-600">
-              My first post built with Next.js and Markdown.
-            </p>
-          </a>
-
-          <a
-            href="/posts/second-post"
-            className="block border rounded-2xl p-6 hover:bg-gray-50 transition"
-          >
-            <h3 className="text-2xl font-semibold mb-2">
-              Second Post
-            </h3>
-
-            <p className="text-gray-600">
-              Notes and thoughts from building the site.
-            </p>
-          </a>
-
-        </div>
-
-      </section>
-
     </main>
   );
 }

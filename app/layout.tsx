@@ -35,9 +35,30 @@ export default function RootLayout({
           </div>
         </nav>
 
-        <main className="max-w-4xl mx-auto px-6 py-10">
-          {children}
-        </main>
+        <>
+  <main className="max-w-4xl mx-auto px-6 py-10">
+    {children}
+  </main>
+
+  <footer className="border-t mt-20">
+    <div className="max-w-4xl mx-auto px-6 py-10 text-center space-y-4">
+
+      <p className="text-gray-600">
+        Interested in working together?
+      </p>
+
+      <a
+        href="https://go.oncehub.com/benpalkowski"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block rounded-lg bg-black text-white px-6 py-3 hover:opacity-90 transition"
+      >
+        Book a Consultation
+      </a>
+
+    </div>
+  </footer>
+</>
 
       </body>
     </html>

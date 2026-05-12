@@ -11,7 +11,8 @@ export default function PostsPage() {
 
   const files = fs.readdirSync(postsDirectory);
 
-  const posts = files.map((fileName) => {
+  const posts = files
+  .map((fileName) => {
     const slug = fileName.replace(".md", "");
 
     const filePath = path.join(
@@ -32,7 +33,11 @@ export default function PostsPage() {
       date: data.date || "",
       excerpt: data.excerpt || "",
     };
-  });
+  })
+  .sort((a, b) =>
+    new Date(b.date).getTime() -
+    new Date(a.date).getTime()
+  );
 
   return (
     <main className="space-y-6">

@@ -82,7 +82,7 @@ export default function RootLayout({
   <p
     style={{
       color: "#666",
-      fontSize: "1.2rem",
+      fontSize: ".9rem",
       margin: "0 20px",
     }}
   >

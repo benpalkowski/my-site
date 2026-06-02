@@ -3,13 +3,24 @@ import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-};
+export async function generateStaticParams() {
+  const postsDirectory = path.join(
+    process.cwd(),
+    "content/posts"
+  );
 
-export default async function PostPage({ params }: Props) {
+  const fileNames = fs.readdirSync(postsDirectory);
+
+  return fileNames.map((fileName) => ({
+    slug: fileName.replace(".md", ""),
+  }));
+}
+
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
 
   const filePath = path.join(
@@ -18,34 +29,46 @@ export default async function PostPage({ params }: Props) {
     `${slug}.md`
   );
 
-  if (!fs.existsSync(filePath)) {
-    return (
-      <main className="p-10">
-        <h1 className="text-3xl font-bold">
-          Post Not Found
-        </h1>
-      </main>
-    );
-  }
-
-  const fileContents = fs.readFileSync(filePath, "utf8");
+  const fileContents = fs.readFileSync(
+    filePath,
+    "utf8"
+  );
 
   const { data, content } = matter(fileContents);
 
-  const htmlContent = marked(content);
+  const contentHtml = await marked(content);
 
   return (
-    <main className="min-h-screen p-10">
-      <h1 className="text-4xl font-bold mb-6">
-        {data.title}
-      </h1>
+    <article className="space-y-6">
 
-      <article
-       className="prose prose-lg max-w-none"
+      <div className="space-y-2">
+
+        <h1 className="text-5xl font-bold">
+          {data.title}
+        </h1>
+
+        <p className="text-gray-500">
+          Benjamin Palkowski •{" "}
+          {new Date(
+            data.date + "T12:00:00"
+          ).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+          {" • "}
+  {data.time}
+        </p>
+
+      </div>
+
+      <div
+        className="prose prose-lg max-w-none"
         dangerouslySetInnerHTML={{
-          __html: htmlContent,
+          __html: contentHtml,
         }}
       />
-    </main>
+
+    </article>
   );
 }

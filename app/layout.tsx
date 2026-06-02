@@ -8,8 +8,8 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "My Website",
-  description: "My blog website",
+  title: "Ben Palkowski",
+  description: "Estate planning, campaign finance and charitable giving",
 };
 
 export default function RootLayout({
@@ -32,6 +32,10 @@ export default function RootLayout({
   Posts
 </Link>
 
+<Link href="/contact">
+  Contact
+</Link>
+
           </div>
         </nav>
 
@@ -40,24 +44,65 @@ export default function RootLayout({
     {children}
   </main>
 
-  <footer className="border-t mt-20">
-    <div className="max-w-4xl mx-auto px-6 py-10 text-center space-y-4">
+ <footer className="border-t mt-20">
+  <div className="max-w-4xl mx-auto px-6 py-10 text-center space-y-4">
 
-      <p className="text-gray-600">
-        Interested in working together?
-      </p>
+    <p className="text-gray-600">
+      Interested in working together?
+    </p>
 
+    <a
+      href="https://go.oncehub.com/benpalkowski"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block rounded-lg bg-black text-white px-6 py-3 hover:opacity-90 transition"
+    >
+      Book a Consultation with Ben Palkowski
+    </a>
+
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginTop: "30px",
+      }}
+    >
       <a
-        href="https://go.oncehub.com/benpalkowski"
+        href="https://www.oldcolonylaw.com"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block rounded-lg bg-black text-white px-6 py-3 hover:opacity-90 transition"
       >
-        Book a Consultation
+        <img
+          src="/images/old-colony-law-logo-ben-palkowkski.png"
+          alt="Old Colony Law"
+          width="120"
+        />
       </a>
-
+  <p
+    style={{
+      color: "#666",
+      fontSize: "1.2rem",
+      margin: "0 20px",
+    }}
+  >
+    © Ben Palkowski, {new Date().getFullYear()}
+  </p>
+      <a
+        href="https://fiscalhighlands.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="/images/fiscal-highlands-logo-ben-palkowksi.png"
+          alt="Second Logo"
+          width="120"
+        />
+      </a>
     </div>
-  </footer>
+
+  </div>
+</footer>
 </>
 
       </body>

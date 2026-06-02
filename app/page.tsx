@@ -8,21 +8,51 @@ export default function HomePage() {
 
         <div className="space-y-4">
 
-          <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
-            Benjamin Palkowski
-          </p>
-
           <h1 className="text-5xl font-bold tracking-tight max-w-4xl leading-tight">
-            Estate planning, charitable giving and campaign finance.
+            Benjamin Palkowski
           </h1>
 
         </div>
 
         <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
-          Miscellaneous updates, analysis and commentary from an attorney, CPA, nonprofit consultant and lifelong New Englander.
+          This is Ben's personal website. Please visit <a href="https://www.oldcolonylaw.com">Old Colony Law</a> for more about Ben's estate planning legal services or <a href="https://www.fiscalhighlands.com">click here</a> to learn more about his nonprofit consulting services.
         </p>
 
       </section>
+
+<div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "30px",
+    alignItems: "center",
+  }}
+>
+   <a
+    href="https://www.oldcolonylaw.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+  <Image
+    src="/images/old-colony-law-logo-ben-palkowkski.png"
+    alt="Logo 1"
+    width={150}
+    height={150}
+  />
+  </a>
+  <a
+    href="https://www.fiscalhighlands.com"
+    target="_blank"
+    rel="noopener noreferrer"
+  >    
+  <Image
+    src="/images/fiscal-highlands-logo-ben-palkowksi.png"
+    alt="Logo 2"
+    width={150}
+    height={150}
+  />
+  </a>
+</div>
 
       <section className="space-y-6">
 
@@ -31,13 +61,13 @@ export default function HomePage() {
     alt="Homepage image"
     width={700}
     height={400}
-    className="rounded-3xl w-full max-w-2xl mx-auto"
+    className="rounded-3xl w-full max-w-xl mx-auto"
   />
 
   <div className="max-w-2xl mx-auto space-y-4">
 
     <h2 className="text-3xl font-bold text-center">
-      Benjamin Palkowski
+      About Benjamin Palkowski
     </h2>
 
     <div className="space-y-4">
@@ -51,11 +81,11 @@ export default function HomePage() {
   </p>
 
   <p> 
-    Ben has also worked in numerous capacities for nonprofit organizations, and advises in the areas of planned giving, campaign finance, and nonprofit fund accounting.
+    Ben has also previously worked in various capacities for numerous nonprofit organizations, and continues to advise nonprofits in the areas of planned giving, campaign finance, and nonprofit fund accounting.
   </p>
 
   <p>
-Please feel welcome to contact me to start a conversation.
+Ben's office is located in Hadley, Massachusetts.
   </p>
 
 </div>

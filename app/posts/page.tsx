@@ -31,6 +31,7 @@ export default function PostsPage() {
       slug,
       title: data.title || slug,
       date: data.date || "",
+      time: data.time || "",
       excerpt: data.excerpt || "",
     };
   })
@@ -54,16 +55,22 @@ export default function PostsPage() {
         >
 
           <p className="text-sm text-gray-500 mb-2">
-            {post.date}
+ {new Date(post.date + "T12:00:00").toLocaleDateString(
+  "en-US",
+  {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }
+)}
+  {" • "}
+  {post.time}
           </p>
 
           <h2 className="text-3xl font-semibold mb-2">
             {post.title}
           </h2>
 
-          <p className="text-gray-600">
-            {post.excerpt}
-          </p>
 
         </Link>
       ))}

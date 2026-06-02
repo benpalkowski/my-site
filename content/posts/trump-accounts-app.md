@@ -1,6 +1,6 @@
 ---
 title: "Trump Accounts App"
-date: "2025-05-28"
+date: "2026-05-28"
 time: "7:23 PM"
 ---
 The Trump Administration has made a Trump Accounts App available for download. The app is reportedly used to register and activate a Trump Account, and to monitor investments and manage contributions. 

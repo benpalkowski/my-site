@@ -1,6 +1,6 @@
 ---
 title: "Pioneer Valley Estate Planning Council Presentation on Campaign Finance and Estate Planning"
-date: "2026-06-3"
+date: "2026-06-03"
 time: "5:44 AM"
 ---
 I was pleased to make a brief presentation before the Pioneer Valley Estate Planning Council last evening.

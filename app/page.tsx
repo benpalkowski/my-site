@@ -15,7 +15,7 @@ export default function HomePage() {
         </div>
 
         <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
-          This is Ben's personal website. Please visit <a href="https://www.oldcolonylaw.com">Old Colony Law</a> for more about Ben's estate planning legal services or <a href="https://www.fiscalhighlands.com">click here</a> to learn more about his nonprofit consulting services.
+          This is Ben's personal website. Please visit <a href="https://www.oldcolonylaw.com">Old Colony Law</a> for more about Ben's estate planning legal services or <a href="https://www.fiscalhighlands.com">the Fiscal Highlands website</a> to learn more about his accounting philosophy and nonprofit consulting services.
         </p>
 
       </section>

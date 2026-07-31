@@ -24,15 +24,23 @@ export default function RootLayout({
         <nav className="border-b px-6 py-4">
           <div className="max-w-4xl mx-auto flex gap-6 text-lg font-medium">
 
-            <Link href="/">
-              Home
-            </Link>
+          <li>
+  <Link href="/">
+    Home
+  </Link>
+</li>
 
-<li><a href="https://www.oldcolonylaw.com" target="_blank" rel="noopener noreferrer">Old Colony Law</a></li>
+<li>
+  <a href="https://www.oldcolonylaw.com" target="_blank" rel="noopener noreferrer">
+    Old Colony Law
+  </a>
+</li>
 
-<Link href="/contact">
-  Contact
-</Link>
+<li>
+  <Link href="/contact">
+    Contact
+  </Link>
+</li>
 
           </div>
         </nav>

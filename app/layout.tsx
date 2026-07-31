@@ -28,9 +28,7 @@ export default function RootLayout({
               Home
             </Link>
 
-            <Link href="/posts">
-  Posts
-</Link>
+<li><a href="https://www.oldcolonylaw.com" target="_blank" rel="noopener noreferrer">Old Colony Law</a></li>
 
 <Link href="/contact">
   Contact

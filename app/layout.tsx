@@ -21,30 +21,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={geist.className}>
 
-        <nav className="border-b px-6 py-4">
-          <div className="max-w-4xl mx-auto flex gap-6 text-lg font-medium">
-
-          <li>
-  <Link href="/">
-    Home
-  </Link>
-</li>
-
-<li>
-  <a href="https://www.oldcolonylaw.com" target="_blank" rel="noopener noreferrer">
-    Old Colony Law
-  </a>
-</li>
-
-<li>
-  <Link href="/contact">
-    Contact
-  </Link>
-</li>
-
-          </div>
-        </nav>
-
         <>
   <main className="max-w-4xl mx-auto px-6 py-10">
     {children}

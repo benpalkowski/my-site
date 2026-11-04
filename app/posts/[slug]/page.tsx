@@ -33,3 +33,19 @@ export default async function PostPage({ params }: { params: { slug: string } })
     </main>
   );
 }
+// This tells Next.js exactly what slugs exist so it can pre-build the HTML pages
+export async function generateStaticParams() {
+  const postsDirectory = path.join(process.cwd(), 'posts');
+  
+  if (!fs.existsSync(postsDirectory)) {
+    return [];
+  }
+
+  const fileNames = fs.readdirSync(postsDirectory);
+  
+  return fileNames
+    .filter((fileName) => fileName.endsWith('.md'))
+    .map((fileName) => ({
+      slug: fileName.replace(/\.md$/, ''),
+    }));
+}

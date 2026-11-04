@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export',
+  trailingSlash: true, // Forces GitHub Pages to find the subfolders properly
+  images: {
+    unoptimized: true, // Required for static exports
+  },
 };
 
 export default nextConfig;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>The BP Spill</title>
+    <link>https://github.io</link>
+    <description>Audio files hosted on my personal GitHub Pages site.</description>
+    <language>en-us</language>
+
+    <item>
+      <title>Track 1: My First Audio File</title>
+      <description>A description of what this audio file is about.</description>
+      <pubDate>Wed, 04 Nov 2026 12:00:00 GMT</pubDate>
+      <enclosure url="https://github.ioaudio/track1.mp3" length="0" type="audio/mpeg" />
+      <guid isPermaLink="true">https://github.ioaudio/4nov2026.mp3</guid>
+    </item>
+
+  </channel>
+</rss>

@@ -1,44 +1,69 @@
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import { notFound } from 'next/navigation';
+import { marked } from 'marked';
 
-const postsDirectory = path.join(process.cwd(), 'posts');
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
-// 1. Generate the static HTML paths for GitHub Pages at build time
+function parseMarkdown(fileContent: string) {
+  const parts = fileContent.split('---');
+  const frontmatterRaw = parts[1] || '';
+  const body = parts.slice(2).join('---');
+
+  const metadata: Record<string, string> = {};
+  frontmatterRaw.split('\n').forEach((line) => {
+    const [key, ...valueParts] = line.split(':');
+    if (key && valueParts.length) {
+      metadata[key.trim()] = valueParts.join(':').trim();
+    }
+  });
+
+  return { metadata, body };
+}
+
 export async function generateStaticParams() {
-  if (!fs.existsSync(postsDirectory)) return [];
+  const contentDirectory = path.join(process.cwd(), 'content');
+  if (!fs.existsSync(contentDirectory)) return [];
 
-  const fileNames = fs.readdirSync(postsDirectory);
-  
-  return fileNames
-    .filter((fileName) => fileName.endsWith('.md'))
-    .map((fileName) => ({
-      slug: fileName.replace(/\.md$/, ''),
+  const filenames = fs.readdirSync(contentDirectory);
+  return filenames
+    .filter((filename) => filename.endsWith('.md'))
+    .map((filename) => ({
+      slug: filename.replace('.md', ''),
     }));
 }
 
-// 2. Render the actual post content
-export default async function PostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const filePath = path.join(postsDirectory, `${slug}.md`);
+export default async function StandalonePostPage({ params }: PageProps) {
+  const { slug } = await params;
+  const filePath = path.join(process.cwd(), 'content', `${slug}.md`);
 
   if (!fs.existsSync(filePath)) {
     notFound();
   }
 
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContents);
+  const fileContent = fs.readFileSync(filePath, 'utf8');
+  const { metadata, body } = parseMarkdown(fileContent);
+  const htmlContent = await marked(body);
 
   return (
-    <main style={{ maxWidth: '600px', margin: '40px auto', padding: '0 20px', fontFamily: 'sans-serif' }}>
-      <p style={{ color: '#666', fontSize: '0.9rem' }}>{data.date}</p>
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>{data.title}</h1>
-      <hr style={{ border: '0', borderTop: '1px solid #eee', marginBottom: '30px' }} />
+    <main style={{ padding: '2rem', maxWidth: '600px', margin: '0 auto', fontFamily: 'sans-serif' }}>
+      <Link href="/posts" style={{ color: '#888', textDecoration: 'none' }}>
+        ← Back to Feed
+      </Link>
       
-      <article style={{ lineHeight: '1.6', fontSize: '1.1rem' }}>
-        <MDXRemote source={content} />
+      <article style={{ marginTop: '2rem' }}>
+        <h1 style={{ marginBottom: '0.5rem' }}>{metadata.title || slug}</h1>
+        <small style={{ color: '#888', display: 'block', marginBottom: '1.5rem' }}>
+          {metadata.date || 'No date provided'}
+        </small>
+        
+        <div 
+          dangerouslySetInnerHTML={{ __html: htmlContent }} 
+          style={{ lineHeight: '1.6', fontSize: '1.1rem' }}
+        />
       </article>
     </main>
   );

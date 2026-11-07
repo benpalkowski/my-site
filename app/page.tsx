@@ -15,7 +15,7 @@ export default function HomePage() {
         </div>
 
         <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
-          This is Ben's personal website. Please visit <a href="https://www.oldcolonylaw.com">Old Colony Law</a> for more about Ben's estate planning legal services or <a href="https://www.fiscalhighlands.com">the Fiscal Highlands website</a> to learn more about his accounting philosophy and nonprofit consulting services.
+          Ben Palkowski is a dual-licensed attorney and CPA, serving Western Massachustts in connection with estate planning, tax, trust administration and IRA planning. Please visit <a href="https://www.oldcolonylaw.com">Old Colony Law</a> for more about Ben's estate planning legal services or <a href="https://www.fiscalhighlands.com">the Fiscal Highlands website</a> to learn more about his accounting, campaign fianance, and nonprofit consulting services.
         </p>
 
       </section>
@@ -86,6 +86,14 @@ export default function HomePage() {
 
   <p>
 Ben's office is located in Hadley, Massachusetts.
+  </p>
+
+  <p>
+    ben@OldColonyLaw.com
+  </p>
+
+  <p>
+    (802) 279 - 2719
   </p>
 
 </div>
